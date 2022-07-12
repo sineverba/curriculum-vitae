@@ -1,0 +1,27 @@
+version: v1.0
+
+name: Build and deploy
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+
+global_job_config:
+  secrets:
+    - name: ACCESS_TOKENS
+  prologue:
+    commands:
+      - checkout
+      - cp .env.bak .env
+      - npm install -g npm@8.13.2
+
+blocks:
+  - name: "Build and deploy"
+    task:
+      jobs:
+        - name: Deploy to Netlify
+          commands:
+            - npm install netlify-cli -g
+            - npm ci
+            - npm run build
+            - netlify deploy -s $NETLIFY_CURRICULUM_VITAE_SITE_ID --auth $NETLIFY_ACCESS_TOKEN -p --dir ./build
