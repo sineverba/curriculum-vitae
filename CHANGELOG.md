@@ -1,4 +1,7 @@
-# 0.2.0
+# 0.2.1
++ Fix `postcss-calc:: Lexical error on line 1: Unrecognized text.`
+
+## 0.2.0
 + Add Bootstrap
 + Add Footer
 + Add `.env.test`
