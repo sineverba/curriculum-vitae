@@ -127,6 +127,7 @@ export const App = () => {
             categories: [
                 'Laravel',
                 'CodeIgniter',
+                'F3',
                 'Spring',
                 'Serverless',
                 'React + Redux + Enzyme/Jest/Nock',
@@ -153,7 +154,7 @@ export const App = () => {
         },
         series: [{
             name: '% knowledge',
-            data: [80, 20, 80, 70, 95, 80, 60]
+            data: [80, 20, 75, 80, 70, 95, 80, 100]
         }],
         colors: ['#FF9655', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FFF263', '#6AF9C4']
     };
@@ -207,6 +208,11 @@ export const App = () => {
 
     return (
         <Container>
+            <Row>
+                <Col>
+                    <h1>sineverba's resume</h1>
+                </Col>
+            </Row>
             <Row>
                 <Col>
                     <Chart options={programmingLanguageOptions} />
