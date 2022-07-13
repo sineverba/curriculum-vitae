@@ -1,4 +1,7 @@
-# 0.2.1
+# Next version
++ Upgrade dependencies
+
+## 0.2.1
 + Fix `postcss-calc:: Lexical error on line 1: Unrecognized text.`
 
 ## 0.2.0
