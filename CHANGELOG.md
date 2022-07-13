@@ -1,2 +1,8 @@
-# 0.1.0
+# 0.2.0
++ Add Bootstrap
++ Add Footer
++ Add `.env.test`
++ Add Highchart
+
+## 0.1.0
 + Add stuffes
