@@ -1,4 +1,7 @@
-# 0.3.0
+# 0.3.1
++ Fix values
+
+## 0.3.0
 + Upgrade dependencies
 + Complete charts
 
