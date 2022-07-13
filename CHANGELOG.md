@@ -1,5 +1,6 @@
 # Next version
 + Upgrade dependencies
++ Complete charts
 
 ## 0.2.1
 + Fix `postcss-calc:: Lexical error on line 1: Unrecognized text.`
