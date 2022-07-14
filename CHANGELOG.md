@@ -1,4 +1,4 @@
-# Next version
+# 1.0.0
 + Change title and description
 
 ## 0.3.1
