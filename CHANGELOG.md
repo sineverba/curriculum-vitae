@@ -1,4 +1,7 @@
-# 0.3.1
+# 1.0.0
++ Change title and description
+
+## 0.3.1
 + Fix values
 
 ## 0.3.0

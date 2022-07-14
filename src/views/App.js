@@ -210,7 +210,7 @@ export const App = () => {
         <Container>
             <Row>
                 <Col>
-                    <h1>sineverba's resume</h1>
+                    <h1>Alessandro A.'s resume</h1>
                 </Col>
             </Row>
             <Row>
