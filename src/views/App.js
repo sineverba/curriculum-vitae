@@ -14,6 +14,9 @@ export const App = () => {
         xAxis: {
             categories: ['PHP', 'Java', 'Javascript', 'Python'],
         },
+        yAxis: {
+            max: 100,
+        },
         plotOptions: {
             bar: {
                 dataLabels: {
@@ -23,7 +26,7 @@ export const App = () => {
         },
         series: [{
             name: '% knowledge',
-            data: [90, 70, 80, 60]
+            data: [95, 75, 85, 60]
         }],
         accessibility: {
             enabled: false,
@@ -144,6 +147,7 @@ export const App = () => {
             crosshair: true
         },
         yAxis: {
+            max: 100,
             min: 0,
             title: {
                 text: '% knowledge'
@@ -194,6 +198,7 @@ export const App = () => {
             crosshair: true
         },
         yAxis: {
+            max: 100,
             min: 0,
             title: {
                 text: '% usage every 100 hours of working'
@@ -230,6 +235,8 @@ export const App = () => {
                 <Col>
                     <Chart options={programmingLanguageOptions} />
                 </Col>
+            </Row>
+            <Row>
                 <Col>
                     <Chart options={frameworksLibrariesOptions} />
                 </Col>
