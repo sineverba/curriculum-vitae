@@ -14,7 +14,7 @@ services:
       - curriculum-vitae
 
   sonarscanner:
-    image: sonarsource/sonar-scanner-cli:4.6
+    image: sonarsource/sonar-scanner-cli:4.7
     container_name: curriculum-vitae-sonarscanner
     volumes:
       - ./:/usr/src

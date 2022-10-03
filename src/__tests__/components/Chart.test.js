@@ -9,7 +9,10 @@ describe('Test Chart', () => {
         },
         series: [{
             data: [1, 2, 3]
-        }]
+        }],
+        accessibility: {
+            enabled: false,
+        }
     }
 
     it('Can render chart', () => {
