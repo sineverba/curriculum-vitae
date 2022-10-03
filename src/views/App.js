@@ -14,6 +14,9 @@ export const App = () => {
         xAxis: {
             categories: ['PHP', 'Java', 'Javascript', 'Python'],
         },
+        yAxis: {
+            max: 100,
+        },
         plotOptions: {
             bar: {
                 dataLabels: {
@@ -23,8 +26,11 @@ export const App = () => {
         },
         series: [{
             name: '% knowledge',
-            data: [90, 70, 80, 60]
-        }]
+            data: [95, 75, 85, 60]
+        }],
+        accessibility: {
+            enabled: false,
+        }
     };
 
     const databasesOptions = {
@@ -44,6 +50,7 @@ export const App = () => {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
         },
         accessibility: {
+            enabled: false,
             point: {
                 valueSuffix: '%'
             }
@@ -73,7 +80,7 @@ export const App = () => {
                 { name: 'Oracle', y: 20 },
                 { name: 'Mongo DB', y: 10 }
             ]
-        }]
+        }],
     };
 
     const workingModeOptions = {
@@ -113,7 +120,10 @@ export const App = () => {
                 ['Commiting and merging into develop', 1],
                 ['CI and CD', 1]
             ]
-        }]
+        }],
+        accessibility: {
+            enabled: false,
+        }
     };
 
     const frameworksLibrariesOptions = {
@@ -137,6 +147,7 @@ export const App = () => {
             crosshair: true
         },
         yAxis: {
+            max: 100,
             min: 0,
             title: {
                 text: '% knowledge'
@@ -156,7 +167,10 @@ export const App = () => {
             name: '% knowledge',
             data: [80, 20, 75, 80, 70, 95, 80, 100]
         }],
-        colors: ['#FF9655', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FFF263', '#6AF9C4']
+        colors: ['#FF9655', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FFF263', '#6AF9C4'],
+        accessibility: {
+            enabled: false,
+        }
     };
 
     const toolsOptions = {
@@ -184,6 +198,7 @@ export const App = () => {
             crosshair: true
         },
         yAxis: {
+            max: 100,
             min: 0,
             title: {
                 text: '% usage every 100 hours of working'
@@ -203,7 +218,10 @@ export const App = () => {
             name: '% usage',
             data: [90, 90, 20, 20, 20, 90, 100, 50, 100, 70, 40, 100]
         }],
-        colors: ['#6AF9C4']
+        colors: ['#6AF9C4'],
+        accessibility: {
+            enabled: false,
+        }
     };
 
     return (
@@ -217,6 +235,8 @@ export const App = () => {
                 <Col>
                     <Chart options={programmingLanguageOptions} />
                 </Col>
+            </Row>
+            <Row>
                 <Col>
                     <Chart options={frameworksLibrariesOptions} />
                 </Col>

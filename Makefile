@@ -2,7 +2,7 @@ include .env
 
 IMAGE_NAME=sineverba
 CONTAINER_NAME=curriculum-vitae
-APP_VERSION=1.0.0
+APP_VERSION=1.1.0-dev
 
 sonar:
 	docker-compose up sonarscanner

@@ -1,4 +1,8 @@
-# 1.0.0
+# 1.1.0
++ Upgrade dependencies
++ Set limit to 100%
+
+## 1.0.0
 + Change title and description
 
 ## 0.3.1
