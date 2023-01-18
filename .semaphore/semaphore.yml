@@ -35,6 +35,16 @@ blocks:
             - cache restore
             - CI=true npm run test
 
+  - name: Eslint
+    skip:
+      when: "tag =~ '.*'"
+    task:
+      jobs:
+        - name: Eslint
+          commands:
+            - cache restore
+            - npm run eslint
+
   - name: Coverage
     skip:
       when: "tag =~ '.*'"
