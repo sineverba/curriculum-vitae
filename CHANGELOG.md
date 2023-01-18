@@ -1,5 +1,6 @@
 # Next version
 + Upgrade dependencies
++ Move options to external JSON
 
 ## 1.1.0
 + Upgrade dependencies
