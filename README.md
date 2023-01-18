@@ -1,7 +1,10 @@
 Curriculum Vitae
 ================
 
-> [Demo frontend project for an online Curriculum Vitae, written with React](https://datacv.netlify.app/)
+> Demo frontend project for an online Curriculum Vitae, written with React
+
+
+See [https://datacv.netlify.app/](https://datacv.netlify.app/)
 
 
 | CI/CD | Link |
