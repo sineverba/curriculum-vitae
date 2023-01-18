@@ -1,13 +1,13 @@
-FROM node:16.17.1-alpine3.16 AS builder
+FROM node:18.13.0-alpine3.17 AS builder
 # Add a workdir directory
 WORKDIR /app
 # Install dependencies
 COPY . .
-RUN npm install npm@8.19.2 && npm install --omit=dev \
+RUN npm install npm@9.3.1 && npm install --omit=dev \
     && npm rebuild node-sass && npm run build
 
 # Use NGINX
-FROM nginx:1.23.1-alpine AS production
+FROM nginx:1.23.3-alpine-slim AS production
 # Update and upgrade
 RUN apk update --no-cache && apk upgrade
 # Copy from builder
