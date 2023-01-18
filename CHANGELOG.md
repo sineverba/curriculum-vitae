@@ -1,6 +1,7 @@
 # Next version
 + Upgrade dependencies
 + Move options to external JSON
++ Add eslint
 
 ## 1.1.0
 + Upgrade dependencies

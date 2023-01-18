@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import App from './views/App';
+import {App} from './views/App';
 import "./assets/scss/app.scss";
 
 const container = document.getElementById('root') || document.createElement('div');
