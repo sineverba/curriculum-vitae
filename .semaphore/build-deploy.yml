@@ -28,6 +28,7 @@ global_job_config:
       - checkout
       - cp .env.bak .env
       - npm install -g npm@$NPM_VERSION
+      - npm pkg set scripts.prepare="echo no-prepare"
       - NODE_ENV=production npm ci
 
 blocks:
@@ -56,7 +57,13 @@ blocks:
             - docker buildx ls
             - docker buildx create --name multiarch --driver docker-container --use
             - docker buildx inspect --bootstrap --builder multiarch
-            - docker buildx build --platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8 --tag $DOCKER_IMAGE:$SEMAPHORE_GIT_TAG_NAME --tag $DOCKER_IMAGE:latest --push --file ./dockerfiles/Dockerfile .
+            - >-
+              docker buildx build
+              --platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+              --tag $DOCKER_IMAGE:$SEMAPHORE_GIT_TAG_NAME
+              --tag $DOCKER_IMAGE:latest
+              --push
+              --file ./dockerfiles/production/Dockerfile "."
 
   - name: "Deploy APP"
     dependencies: ["Build and deploy"]
@@ -67,7 +74,15 @@ blocks:
             - ssh-keyscan -p $VPS01_OCI_PORT -H $VPS01_OCI_URL >> ~/.ssh/known_hosts
             - chmod 0600 ~/.ssh/id_semaphore
             - ssh-add ~/.ssh/id_semaphore
-            - ssh -t $VPS01_OCI_USERNAME@$VPS01_OCI_URL -p $VPS01_OCI_PORT "cd $FOLDER_APP && docker-compose stop && exit"
-            - ssh -t $VPS01_OCI_USERNAME@$VPS01_OCI_URL -p $VPS01_OCI_PORT "docker container rm $FOLDER_APP && docker image rm $DOCKER_IMAGE:latest && exit"
-            - ssh -t $VPS01_OCI_USERNAME@$VPS01_OCI_URL -p $VPS01_OCI_PORT "docker pull $DOCKER_IMAGE:latest && exit"
-            - ssh -t $VPS01_OCI_USERNAME@$VPS01_OCI_URL -p $VPS01_OCI_PORT "cd $FOLDER_APP && docker-compose up -d && exit"
+            - >-
+              ssh -t $VPS01_OCI_USERNAME@$VPS01_OCI_URL -p $VPS01_OCI_PORT
+              "cd $FOLDER_APP && docker-compose stop && exit"
+            - >-
+              ssh -t $VPS01_OCI_USERNAME@$VPS01_OCI_URL -p $VPS01_OCI_PORT
+              "docker container rm $FOLDER_APP && docker image rm $DOCKER_IMAGE:latest && exit"
+            - >-
+              ssh -t $VPS01_OCI_USERNAME@$VPS01_OCI_URL -p $VPS01_OCI_PORT
+              "docker pull $DOCKER_IMAGE:latest && exit"
+            - >-
+              ssh -t $VPS01_OCI_USERNAME@$VPS01_OCI_URL -p $VPS01_OCI_PORT
+              "cd $FOLDER_APP && docker-compose up -d && exit"
