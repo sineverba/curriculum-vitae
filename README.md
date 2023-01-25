@@ -6,7 +6,7 @@ Curriculum Vitae
 | Service | Link |
 | ------- | ---- |
 | Netlify | [https://datacv.netlify.app/](https://datacv.netlify.app/) |
-| Vercel | [https://datacv.netlify.app/](https://datacv.netlify.app/) |
+| Vercel | [https://curriculum-vitae-ten.vercel.app/](https://curriculum-vitae-ten.vercel.app/) |
 | Custom | [https://cv.k2p.it/](https://cv.k2p.it/) |
 
 
