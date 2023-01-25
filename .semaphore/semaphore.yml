@@ -34,38 +34,31 @@ blocks:
     skip:
       when: "tag =~ '.*'"
     task:
-      jobs:
-        - name: Test
-          commands:
-            - cache restore
-            - CI=true npm run test
-
-  - name: Eslint
-    skip:
-      when: "tag =~ '.*'"
-    task:
-      jobs:
-        - name: Eslint
-          commands:
-            - cache restore
-            - npm run eslint
-
-  - name: Coverage
-    skip:
-      when: "tag =~ '.*'"
-    task:
       prologue:
         commands:
           - cache restore
-          - CI=true npm run coverage
       jobs:
+        - name: Test
+          commands:
+            - CI=true npm run test
+        - name: Eslint
+          commands:
+            - CI=true npm run eslint
         - name: Coverage
           commands:
+            - CI=true npm run coverage
             - export COVERALLS_REPO_TOKEN=$COVERALLS_CURRICULUM_VITAE
             - cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js
-        - name: Sonarcloud
+        - name: SonarCloud
           commands:
-            - docker run --rm -e SONAR_HOST_URL="https://sonarcloud.io" -e SONAR_LOGIN=$SONAR_TOKEN -v "/home/semaphore/curriculum-vitae:/usr/src" sonarsource/sonar-scanner-cli:$SONARSCANNER_VERSION
+            - CI=true npm run coverage
+            - export COVERALLS_REPO_TOKEN=$COVERALLS_CURRICULUM_VITAE
+            - >-
+              docker run --rm
+              -e SONAR_HOST_URL="https://sonarcloud.io"
+              -e SONAR_LOGIN=$SONAR_TOKEN
+              -v "/home/semaphore/curriculum-vitae:/usr/src"
+              sonarsource/sonar-scanner-cli:$SONARSCANNER_VERSION
           
 promotions:
   - name: Deploy
