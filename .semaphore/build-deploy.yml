@@ -39,7 +39,7 @@ blocks:
         - name: Deploy to Netlify
           commands:
             - npm install netlify-cli -g
-            - NODE_ENV=production npm run build
+            - npm run build
             - netlify deploy -s $NETLIFY_CURRICULUM_VITAE_SITE_ID --auth $NETLIFY_ACCESS_TOKEN -p --dir ./build
         - name: Deploy to Vercel
           commands:
@@ -48,7 +48,7 @@ blocks:
         - name: Create Docker image
           commands:
             - docker login -u semaphore -p $GITLAB_TOKEN $GITLAB_REGISTRY
-            - NODE_ENV=production npm run build
+            - npm run build
             - mkdir -vp ~/.docker/cli-plugins/
             - curl --silent -L "https://github.com/docker/buildx/releases/download/v$BUILDX_VERSION/buildx-v$BUILDX_VERSION.linux-amd64" > ~/.docker/cli-plugins/docker-buildx
             - chmod a+x ~/.docker/cli-plugins/docker-buildx

@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "Ci=true react-scripts build",
+    "build": "DISABLE_ESLINT_PLUGIN='true' REACT_APP_VERSION=$npm_package_version react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "coverage": "CI=true ENV=test react-scripts test --coverage",
