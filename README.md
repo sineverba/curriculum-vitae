@@ -3,8 +3,11 @@ Curriculum Vitae
 
 > Demo frontend project for an online Curriculum Vitae, written with React
 
-
-See [https://datacv.netlify.app/](https://datacv.netlify.app/)
+| Service | Link |
+| ------- | ---- |
+| Netlify | [https://datacv.netlify.app/](https://datacv.netlify.app/) |
+| Vercel | [https://datacv.netlify.app/](https://datacv.netlify.app/) |
+| Custom | [https://cv.k2p.it/](https://cv.k2p.it/) |
 
 
 | CI/CD | Link |
