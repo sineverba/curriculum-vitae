@@ -37,12 +37,19 @@ preparemulti:
 
 build:
 	npm run build
-	docker build --tag $(IMAGE_NAME):$(APP_VERSION) --file dockerfiles/production/Dockerfile "."
+	docker build \
+		--tag $(IMAGE_NAME):$(APP_VERSION) \
+		--file dockerfiles/production/build/docker/Dockerfile "."
 	rm -r build
 
 multi:
 	npm run build
-	docker buildx build --platform linux/arm64/v8,linux/amd64,linux/arm/v6,linux/arm/v7 --tag $(IMAGE_NAME):$(APP_VERSION) --tag $(IMAGE_NAME):latest --push --file dockerfiles/production/Dockerfile .
+	docker buildx build \
+		--platform linux/arm64/v8,linux/amd64,linux/arm/v6,linux/arm/v7 \
+		--tag $(IMAGE_NAME):$(APP_VERSION) \
+		--tag $(IMAGE_NAME):latest \
+		--push \
+		--file dockerfiles/production/build/docker/Dockerfile "."
 	rm -r build
 
 test:
