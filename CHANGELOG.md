@@ -1,4 +1,4 @@
-# Next version
+# 1.4.0
 + Upgrade dependencies + refactor Semaphore and Docker
 
 ## 1.3.1
