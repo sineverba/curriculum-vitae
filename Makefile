@@ -2,7 +2,7 @@ include .env
 
 IMAGE_NAME=registry.gitlab.com/cicdprojects/curriculum-vitae
 CONTAINER_NAME=curriculum-vitae
-APP_VERSION=1.3.1-dev
+APP_VERSION=1.4.0-dev
 SONARSCANNER_VERSION=4.8.0
 BUILDX_VERSION=0.10.0
 BINFMT_VERSION=qemu-v7.0.0-28
@@ -37,12 +37,19 @@ preparemulti:
 
 build:
 	npm run build
-	docker build --tag $(IMAGE_NAME):$(APP_VERSION) --file dockerfiles/production/Dockerfile "."
+	docker build \
+		--tag $(IMAGE_NAME):$(APP_VERSION) \
+		--file dockerfiles/production/build/docker/Dockerfile "."
 	rm -r build
 
 multi:
 	npm run build
-	docker buildx build --platform linux/arm64/v8,linux/amd64,linux/arm/v6,linux/arm/v7 --tag $(IMAGE_NAME):$(APP_VERSION) --tag $(IMAGE_NAME):latest --push --file dockerfiles/production/Dockerfile .
+	docker buildx build \
+		--platform linux/arm64/v8,linux/amd64,linux/arm/v6,linux/arm/v7 \
+		--tag $(IMAGE_NAME):$(APP_VERSION) \
+		--tag $(IMAGE_NAME):latest \
+		--push \
+		--file dockerfiles/production/build/docker/Dockerfile "."
 	rm -r build
 
 test:
