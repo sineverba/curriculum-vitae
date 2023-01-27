@@ -1,4 +1,7 @@
-# 1.3.1
+# Next version
++ Upgrade dependencies + refactor Semaphore and Docker
+
+## 1.3.1
 + Fix Semaphore and links
 
 ## 1.3.0

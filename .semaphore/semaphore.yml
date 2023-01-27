@@ -10,7 +10,7 @@ global_job_config:
     - name: ACCESS_TOKENS
   env_vars:
     - name: NPM_VERSION
-      value: 9.3.1
+      value: 9.4.0
     - name: SONARSCANNER_VERSION
       value: 4.8.0
   prologue:
@@ -61,7 +61,7 @@ blocks:
               sonarsource/sonar-scanner-cli:$SONARSCANNER_VERSION
           
 promotions:
-  - name: Deploy
-    pipeline_file: build-deploy.yml
+  - name: Build
+    pipeline_file: build.yml
     auto_promote:
       when: "result = 'passed' and tag =~ '.*'"
