@@ -1,6 +1,7 @@
 # Next version
 + Upgrade dependencies
 + Add MSW
++ Add util convert function
 
 ## 1.4.0
 + Upgrade dependencies + refactor Semaphore and Docker
