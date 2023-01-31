@@ -67,7 +67,7 @@
     "testMatch": [
       "**/__tests__/**/*.js",
       "!**/__mocks__/**",
-      "!**/__test-utils__/**"
+      "!**/__utils__/**"
     ],
     "collectCoverageFrom": [
       "!<rootDir>/src/reportWebVitals.js",
