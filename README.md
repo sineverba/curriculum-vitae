@@ -27,3 +27,4 @@ __This project uses:__
 ## Setup
 + Copy .env.bak into .env
 + Fill with Sonar data
++ Run `make initmsw`
