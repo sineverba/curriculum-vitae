@@ -1,4 +1,11 @@
-# 1.4.0
+# 1.5.0
++ Upgrade dependencies
++ Add MSW
++ Add util convert function
++ Add databases options function
++ Add Redux Tool Kit Query
+
+## 1.4.0
 + Upgrade dependencies + refactor Semaphore and Docker
 
 ## 1.3.1
