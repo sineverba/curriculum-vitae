@@ -7,11 +7,8 @@ import {items as databasesOptions} from "../assets/json/databasesOptions";
 import {items as workingModeOptions} from "../assets/json/workingModeOptions";
 import {items as frameworksLibrariesOptions} from "../assets/json/frameworksLibrariesOptions";
 import {items as toolsOptions} from "../assets/json/toolsOptions";
-import { useGetDatabasesQuery } from "../features/apiSlice";
 
 export function App() {
-
-  const { data: databases } = useGetDatabasesQuery();
 
   const options = [
     {
