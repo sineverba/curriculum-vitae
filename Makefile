@@ -7,6 +7,9 @@ SONARSCANNER_VERSION=4.8.0
 BUILDX_VERSION=0.10.1
 BINFMT_VERSION=qemu-v7.0.0-28
 
+initmsw:
+	npx msw init public/ - save
+
 sonar:
 	docker run --rm -it \
 		--name sonarscanner \
