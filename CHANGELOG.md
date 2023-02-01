@@ -1,5 +1,6 @@
 # Next version
 + Add frameworks options object return
++ Add frameworks call
 
 ## 1.5.0
 + Upgrade dependencies
