@@ -1,4 +1,8 @@
-# 1.5.0
+# 1.6.0
++ Add frameworks options object return
++ Add frameworks call
+
+## 1.5.0
 + Upgrade dependencies
 + Add MSW
 + Add util convert function
