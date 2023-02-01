@@ -4,14 +4,15 @@ import { Chart } from "../components/Chart";
 import { FooterPage } from "../components/FooterPage";
 import { items as programmingLanguageOptions } from "../assets/json/programmingLanguageOptions";
 import { items as workingModeOptions } from "../assets/json/workingModeOptions";
-import { items as frameworksLibrariesOptions } from "../assets/json/frameworksLibrariesOptions";
 import { items as toolsOptions } from "../assets/json/toolsOptions";
-import { useGetDatabasesQuery } from "../features/apiSlice";
+import { useGetDatabasesQuery, useGetFrameworksQuery } from "../features/apiSlice";
 import databasesOptions from "../utils/methods/databasesOptions";
+import frameworksOptions from "../utils/methods/frameworksOptions";
 
 export function App() {
   
   const { data: databases } = useGetDatabasesQuery();
+  const { data: frameworks } = useGetFrameworksQuery();
 
   const options = [
     {
@@ -20,7 +21,7 @@ export function App() {
     },
     {
       key: 2,
-      value: frameworksLibrariesOptions
+      value: frameworks ? frameworksOptions(frameworks) : null
     },
     {
       key: 3,
