@@ -1,3 +1,6 @@
+/**
+ * The answer to /databases call
+ */
 export const items = [
   {
     id: 1,
