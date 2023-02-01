@@ -1,4 +1,4 @@
-# Next version
+# 1.6.0
 + Add frameworks options object return
 + Add frameworks call
 
