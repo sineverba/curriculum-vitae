@@ -12,13 +12,13 @@ global_job_config:
     - name: VPS
   env_vars:
     - name: NPM_VERSION
-      value: 9.4.0
+      value: 9.4.1
     - name: DOCKER_IMAGE
       value: registry.gitlab.com/cicdprojects/curriculum-vitae
     - name: GITLAB_REGISTRY
       value: registry.gitlab.com
     - name: BUILDX_VERSION
-      value: 0.10.0
+      value: 0.10.2
     - name: BINFMT_VERSION
       value: qemu-v7.0.0-28
     - name: FOLDER_APP
