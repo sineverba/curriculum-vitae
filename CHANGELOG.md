@@ -1,4 +1,9 @@
-# 1.6.0
+# 1.7.0
++ Upgrade dependencies
++ Add programming language options object return
++ Add programming language call
+
+## 1.6.0
 + Add frameworks options object return
 + Add frameworks call
 

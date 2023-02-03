@@ -11,6 +11,8 @@ describe('Test App', () => {
       expect(database).toBeInTheDocument();
       const framework = screen.getByText(/laravel/i);
       expect(framework).toBeInTheDocument();
+      const programmingLanguage = screen.getByText(/php/i);
+      expect(programmingLanguage).toBeInTheDocument();
     });
   });
 });
