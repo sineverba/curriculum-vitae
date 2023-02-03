@@ -2,22 +2,23 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Chart } from "../components/Chart";
 import { FooterPage } from "../components/FooterPage";
-import { items as programmingLanguageOptions } from "../assets/json/programmingLanguageOptions";
 import { items as workingModeOptions } from "../assets/json/workingModeOptions";
 import { items as toolsOptions } from "../assets/json/toolsOptions";
-import { useGetDatabasesQuery, useGetFrameworksQuery } from "../features/apiSlice";
+import { useGetDatabasesQuery, useGetFrameworksQuery, useGetProgrammingLanguagesQuery } from "../features/apiSlice";
 import databasesOptions from "../utils/methods/databasesOptions";
 import frameworksOptions from "../utils/methods/frameworksOptions";
+import programmingLanguagesOptions from "../utils/methods/programmingLanguagesOptions";
 
 export function App() {
   
   const { data: databases } = useGetDatabasesQuery();
   const { data: frameworks } = useGetFrameworksQuery();
+  const { data: programmingLanguages } = useGetProgrammingLanguagesQuery();
 
   const options = [
     {
       key: 1,
-      value: programmingLanguageOptions
+      value: programmingLanguages ? programmingLanguagesOptions(programmingLanguages) : null
     },
     {
       key: 2,

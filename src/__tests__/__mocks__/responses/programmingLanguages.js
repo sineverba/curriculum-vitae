@@ -37,5 +37,5 @@ export const items = [
     created_at: "2023-02-02T20:06:38.000000Z",
     updated_at: "2023-02-02T20:06:38.000000Z",
     deleted_at: null
-  }
+  },
 ];
