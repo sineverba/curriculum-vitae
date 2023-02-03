@@ -1,4 +1,4 @@
-# Next version
+# 1.7.0
 + Upgrade dependencies
 + Add programming language options object return
 + Add programming language call
