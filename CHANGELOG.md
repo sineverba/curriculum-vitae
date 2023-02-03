@@ -1,4 +1,7 @@
-# 1.7.0
+# Next version
++ Remove npm dependencies
+
+## 1.7.0
 + Upgrade dependencies
 + Add programming language options object return
 + Add programming language call
