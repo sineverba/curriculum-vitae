@@ -1,5 +1,6 @@
 # Next version
 + Upgrade dependencies
++ Add programming language options object return
 
 ## 1.6.0
 + Add frameworks options object return

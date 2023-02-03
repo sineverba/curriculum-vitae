@@ -3,11 +3,11 @@ Curriculum Vitae
 
 > Demo frontend project for an online Curriculum Vitae, written with React
 
-| Service | Link |
-| ------- | ---- |
-| Netlify | [https://datacv.netlify.app/](https://datacv.netlify.app/) |
-| Vercel | [https://curriculum-vitae-ten.vercel.app/](https://curriculum-vitae-ten.vercel.app/) |
-| Custom | [https://cv.k2p.it/](https://cv.k2p.it/) |
+| Service  | Github link | Demo                                                                                           |
+|----------| ----------- |------------------------------------------------------------------------------------------------|
+| Frontend | [https://github.com/sineverba/curriculum-vitae](https://github.com/sineverba/curriculum-vitae) | [Netlify](https://datacv.netlify.app/) - [Vercel](https://curriculum-vitae-ten.vercel.app/) - [Custom](https://cv.k2p.it/) |
+| Backend  | [https://github.com/sineverba/resumecv-backend](https://github.com/sineverba/resumecv-backend) | [Swagger](https://resumecvbackend.k2p.it/) |
+
 
 
 | CI/CD | Link |
