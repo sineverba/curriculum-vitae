@@ -4,7 +4,7 @@ IMAGE_NAME=registry.gitlab.com/cicdprojects/curriculum-vitae
 CONTAINER_NAME=curriculum-vitae
 APP_VERSION=1.6.0-dev
 SONARSCANNER_VERSION=4.8.0
-BUILDX_VERSION=0.10.1
+BUILDX_VERSION=0.10.2
 BINFMT_VERSION=qemu-v7.0.0-28
 
 initmsw:
