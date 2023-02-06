@@ -1,4 +1,10 @@
-# 1.7.0
+# 1.8.0
++ Remove npm dependencies
++ Upgrade dependencies
++ Add tools and technologies options object return + Refactor Semaphore
++ Add tools and technologies call
+
+## 1.7.0
 + Upgrade dependencies
 + Add programming language options object return
 + Add programming language call
