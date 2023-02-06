@@ -61,7 +61,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
     "msw": "^1.0.0",
-    "npm-check-updates": "^16.6.3"
+    "npm-check-updates": "^16.6.4"
   },
   "jest": {
     "testMatch": [
