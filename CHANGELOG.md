@@ -1,5 +1,6 @@
 # Next version
 + Remove npm dependencies
++ Upgrade dependencies
 
 ## 1.7.0
 + Upgrade dependencies
