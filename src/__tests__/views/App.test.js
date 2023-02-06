@@ -13,6 +13,8 @@ describe('Test App', () => {
       expect(framework).toBeInTheDocument();
       const programmingLanguage = screen.getByText(/php/i);
       expect(programmingLanguage).toBeInTheDocument();
+      const tool = screen.getByText(/docker-compose/i);
+      expect(tool).toBeInTheDocument();
     });
   });
 });

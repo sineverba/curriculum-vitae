@@ -2,6 +2,7 @@
 + Remove npm dependencies
 + Upgrade dependencies
 + Add tools and technologies options object return + Refactor Semaphore
++ Add tools and technologies call
 
 ## 1.7.0
 + Upgrade dependencies

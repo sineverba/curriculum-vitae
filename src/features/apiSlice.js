@@ -7,7 +7,7 @@ export const apiSlice = createApi({
     baseUrl: process.env.REACT_APP_BACKEND_URL
   }),
   // With tag type we can invalidate cache
-  tagTypes: ["databases", "frameworks", "programmingLanguages"],
+  tagTypes: ["databases", "frameworks", "programmingLanguages", "tools"],
   endpoints: (builder) => ({
     getDatabases: builder.query({
       query: () => "/databases",
@@ -20,6 +20,10 @@ export const apiSlice = createApi({
     getProgrammingLanguages: builder.query({
       query: () => "/programming-languages",
       providesTags: ["programmingLanguages"]
+    }),
+    getTools: builder.query({
+      query: () => "/tools",
+      providesTags: ["tools"]
     })
   })
 });
@@ -29,5 +33,6 @@ export const apiSlice = createApi({
 export const {
   useGetDatabasesQuery,
   useGetFrameworksQuery,
-  useGetProgrammingLanguagesQuery
+  useGetProgrammingLanguagesQuery,
+  useGetToolsQuery
 } = apiSlice;

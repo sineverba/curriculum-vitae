@@ -3,17 +3,18 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Chart } from "../components/Chart";
 import { FooterPage } from "../components/FooterPage";
 import { items as workingModeOptions } from "../assets/json/workingModeOptions";
-import { items as toolsOptions } from "../assets/json/toolsOptions";
-import { useGetDatabasesQuery, useGetFrameworksQuery, useGetProgrammingLanguagesQuery } from "../features/apiSlice";
+import { useGetDatabasesQuery, useGetFrameworksQuery, useGetProgrammingLanguagesQuery, useGetToolsQuery } from "../features/apiSlice";
 import databasesOptions from "../utils/methods/databasesOptions";
 import frameworksOptions from "../utils/methods/frameworksOptions";
 import programmingLanguagesOptions from "../utils/methods/programmingLanguagesOptions";
+import toolsOptions from "../utils/methods/toolsOptions";
 
 export function App() {
   
   const { data: databases } = useGetDatabasesQuery();
   const { data: frameworks } = useGetFrameworksQuery();
   const { data: programmingLanguages } = useGetProgrammingLanguagesQuery();
+  const { data: tools } = useGetToolsQuery();
 
   const options = [
     {
@@ -26,7 +27,7 @@ export function App() {
     },
     {
       key: 3,
-      value: toolsOptions
+      value: tools ? toolsOptions(tools) : null
     },
     {
       key: 4,
