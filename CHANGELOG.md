@@ -1,4 +1,7 @@
-# 1.8.0
+# Next version
++ Add Qodana and CircleCI
+
+## 1.8.0
 + Remove npm dependencies
 + Upgrade dependencies
 + Add tools and technologies options object return + Refactor Semaphore
