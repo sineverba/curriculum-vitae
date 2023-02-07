@@ -1,19 +1,26 @@
 version: 2.1
+orbs:
+  qodana: jetbrains/qodana@2022.3.2
 jobs:
-
+  scan:
+    machine:
+      image: 'ubuntu-2004:2022.10.1'
+    steps:
+      - checkout
+      - qodana/scan
   test:
     docker:
-      - image: cimg/node:18.12.1
-
+      - image: cimg/node:18.14.0
     steps:
       - checkout
       - run: npm ci
       - run: CI=true npm run test
-
 workflows:
   version: 2
   test:
     jobs:
+      - scan:
+          context: qodana
       - test:
           filters:
             branches:
