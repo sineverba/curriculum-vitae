@@ -11,7 +11,7 @@ global_job_config:
     - name: ACCESS_TOKENS
   env_vars:
     - name: NPM_VERSION
-      value: 9.4.1
+      value: 9.4.2
     - name: DOCKER_IMAGE
       value: registry.gitlab.com/cicdprojects/curriculum-vitae
     - name: GITLAB_REGISTRY
