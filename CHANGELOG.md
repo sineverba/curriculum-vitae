@@ -1,5 +1,7 @@
 # Next version
 + Add Qodana and CircleCI
++ Upgrade dependencies
++ Add working mode object return
 
 ## 1.8.0
 + Remove npm dependencies
