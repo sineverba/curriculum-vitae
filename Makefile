@@ -36,7 +36,11 @@ fixnodesass:
 
 preparemulti:
 	mkdir -vp ~/.docker/cli-plugins
-	curl -L "https://github.com/docker/buildx/releases/download/v$(BUILDX_VERSION)/buildx-v$(BUILDX_VERSION).linux-amd64" > ~/.docker/cli-plugins/docker-buildx
+	curl \
+		-L \
+		"https://github.com/docker/buildx/releases/download/v$(BUILDX_VERSION)/buildx-v$(BUILDX_VERSION).linux-amd64" \
+		> \
+		~/.docker/cli-plugins/docker-buildx
 	chmod a+x ~/.docker/cli-plugins/docker-buildx
 	docker buildx version
 	docker run --rm --privileged tonistiigi/binfmt:$(BINFMT_VERSION) --install all
