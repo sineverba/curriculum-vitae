@@ -2,6 +2,7 @@
 + Add Qodana and CircleCI
 + Upgrade dependencies
 + Add working mode object return
++ Add working mode call
 
 ## 1.8.0
 + Remove npm dependencies
