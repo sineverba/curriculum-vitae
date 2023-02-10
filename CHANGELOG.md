@@ -1,4 +1,10 @@
-# 1.8.0
+# 1.9.0
++ Add Qodana and CircleCI
++ Upgrade dependencies
++ Add working mode object return
++ Add working mode call
+
+## 1.8.0
 + Remove npm dependencies
 + Upgrade dependencies
 + Add tools and technologies options object return + Refactor Semaphore

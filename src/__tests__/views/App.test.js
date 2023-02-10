@@ -15,6 +15,8 @@ describe('Test App', () => {
       expect(programmingLanguage).toBeInTheDocument();
       const tool = screen.getByText(/docker-compose/i);
       expect(tool).toBeInTheDocument();
+      const working = screen.getByText(/test drive development/i);
+      expect(working).toBeInTheDocument();
     });
   });
 });
