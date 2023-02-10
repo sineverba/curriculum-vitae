@@ -2,12 +2,12 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Chart } from "../components/Chart";
 import { FooterPage } from "../components/FooterPage";
-import { items as workingModeOptions } from "../assets/json/workingModeOptions";
-import { useGetDatabasesQuery, useGetFrameworksQuery, useGetProgrammingLanguagesQuery, useGetToolsQuery } from "../features/apiSlice";
+import { useGetDatabasesQuery, useGetFrameworksQuery, useGetProgrammingLanguagesQuery, useGetToolsQuery, useGetWorkingModeQuery } from "../features/apiSlice";
 import databasesOptions from "../utils/methods/databasesOptions";
 import frameworksOptions from "../utils/methods/frameworksOptions";
 import programmingLanguagesOptions from "../utils/methods/programmingLanguagesOptions";
 import toolsOptions from "../utils/methods/toolsOptions";
+import workingModeOptions from "../utils/methods/workingModeOptions";
 
 export function App() {
   
@@ -15,6 +15,7 @@ export function App() {
   const { data: frameworks } = useGetFrameworksQuery();
   const { data: programmingLanguages } = useGetProgrammingLanguagesQuery();
   const { data: tools } = useGetToolsQuery();
+  const { data: workingMode } = useGetWorkingModeQuery();
 
   const options = [
     {
@@ -35,7 +36,7 @@ export function App() {
     },
     {
       key: 5,
-      value: workingModeOptions
+      value: workingMode ? workingModeOptions(workingMode) : null
     },
   ];
 
