@@ -2,7 +2,7 @@ include .env
 
 IMAGE_NAME=registry.gitlab.com/cicdprojects/curriculum-vitae
 CONTAINER_NAME=curriculum-vitae
-APP_VERSION=1.9.0-dev
+APP_VERSION=1.10.0-dev
 SONARSCANNER_VERSION=4.8.0
 BUILDX_VERSION=0.11.1
 BINFMT_VERSION=qemu-v7.0.0-28
