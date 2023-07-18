@@ -2,11 +2,10 @@ include .env
 
 IMAGE_NAME=registry.gitlab.com/cicdprojects/curriculum-vitae
 CONTAINER_NAME=curriculum-vitae
-APP_VERSION=1.9.0-dev
+APP_VERSION=1.10.0-dev
 SONARSCANNER_VERSION=4.8.0
-BUILDX_VERSION=0.10.2
+BUILDX_VERSION=0.11.1
 BINFMT_VERSION=qemu-v7.0.0-28
-QODANA_VERSION=2022.3-eap
 
 initmsw:
 	npx msw init public/ - save
@@ -16,14 +15,8 @@ sonar:
 		--name sonarscanner \
 		-v $(PWD):/usr/src \
 		-e SONAR_HOST_URL=$(SONAR_HOST_URL) \
-		-e SONAR_LOGIN=$(SONAR_LOGIN) \
+		-e SONAR_LOGIN=$(SONAR_TOKEN) \
 		sonarsource/sonar-scanner-cli:$(SONARSCANNER_VERSION)
-
-qodana:
-	docker run --rm -it \
-		-v $(PWD)/:/data/project/ \
-		-p 8080:8080 jetbrains/qodana-js:$(QODANA_VERSION) \
-		--show-report
 
 upgrade:
 	npx ncu -u
@@ -57,6 +50,7 @@ build:
 	rm -r build
 
 multi:
+	preparemulti
 	npm run build
 	docker buildx build \
 		--platform linux/arm64/v8,linux/amd64,linux/arm/v6,linux/arm/v7 \
@@ -72,4 +66,5 @@ spin:
 	docker container run -it --rm --publish 8080:80 --name $(CONTAINER_NAME) $(IMAGE_NAME):$(APP_VERSION)
 
 destroy:
+	docker image rm nginx:1.25.1-alpine3.17-slim
 	docker image rm $(IMAGE_NAME):$(APP_VERSION)
