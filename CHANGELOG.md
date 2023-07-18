@@ -1,4 +1,7 @@
-# 1.9.0
+# Next version
++ UPgrade dependencies
+
+## 1.9.0
 + Add Qodana and CircleCI
 + Upgrade dependencies
 + Add working mode object return
