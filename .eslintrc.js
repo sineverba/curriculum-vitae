@@ -5,7 +5,7 @@ module.exports = {
     node: true
   },
   extends: ["plugin:react/recommended", "airbnb", "prettier"],
-  ignorePatterns: ["src/__tests__/*", "node_modules/", "src/setupTests.js"],
+  ignorePatterns: ["src/__tests__/*", "node_modules/", "src/setupTests.js", "build/"],
   overrides: [
     {
       files: ["*.js", "*.jsx"]

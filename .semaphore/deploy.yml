@@ -3,8 +3,7 @@ version: v1.0
 name: Deploy
 agent:
   machine:
-    type: e1-standard-2
-    os_image: ubuntu2004
+    type: s1-oci
 
 global_job_config:
   secrets:
@@ -12,13 +11,13 @@ global_job_config:
     - name: VPS
   env_vars:
     - name: NPM_VERSION
-      value: 9.4.2
+      value: 9.8.0
     - name: DOCKER_IMAGE
       value: registry.gitlab.com/cicdprojects/curriculum-vitae
     - name: GITLAB_REGISTRY
       value: registry.gitlab.com
     - name: BUILDX_VERSION
-      value: 0.10.2
+      value: 0.11.1
     - name: BINFMT_VERSION
       value: qemu-v7.0.0-28
     - name: FOLDER_APP
