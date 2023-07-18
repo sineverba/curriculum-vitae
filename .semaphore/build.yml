@@ -3,7 +3,8 @@ version: v1.0
 name: Build
 agent:
   machine:
-    type: s1-oci
+    type: e1-standard-2
+    os_image: ubuntu2004
 
 global_job_config:
   secrets:
