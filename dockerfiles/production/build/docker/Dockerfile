@@ -1,6 +1,9 @@
-FROM nginx:1.25.1-alpine3.17-slim
+FROM nginx:1.25.3-alpine3.18-slim
 # Update and upgrade
-RUN apk update --no-cache && apk upgrade
+RUN apk update && \
+    apk add --upgrade apk-tools && \
+    apk upgrade --available && \
+    rm -rf /var/cache/apk/*
 # Copy from builder
 COPY build /usr/share/nginx/html
 # Copy nginx configuration
