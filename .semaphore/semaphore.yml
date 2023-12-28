@@ -10,9 +10,9 @@ global_job_config:
     - name: ACCESS_TOKENS
   env_vars:
     - name: NPM_VERSION
-      value: 9.8.0
+      value: 10.2.5
     - name: SONARSCANNER_VERSION
-      value: 4.8.0
+      value: 5.0.1
   prologue:
     commands:
       - checkout
@@ -54,8 +54,8 @@ blocks:
             - >-
               docker run --rm
               -e SONAR_HOST_URL="https://sonarcloud.io"
-              -e SONAR_LOGIN=$SONAR_TOKEN
-              -v "/home/semaphore/curriculum-vitae:/usr/src"
+              -e SONAR_TOKEN=$SONAR_TOKEN
+              -v $PWD:/usr/src
               sonarsource/sonar-scanner-cli:$SONARSCANNER_VERSION
           
 promotions:

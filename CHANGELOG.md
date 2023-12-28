@@ -1,4 +1,8 @@
-# 1.10.0
+# 1.11.0
++ Refactor Semaphore
++ Upgrade dependencies
+
+## 1.10.0
 + UPgrade dependencies
 
 ## 1.9.0
