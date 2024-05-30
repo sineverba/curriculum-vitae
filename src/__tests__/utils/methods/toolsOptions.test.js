@@ -1,5 +1,5 @@
-import toolsOptions from "../../../utils/methods/toolsOptions";
-import { items } from "../../__mocks__/responses/tools";
+import toolsOptions from "@/app/utils/methods/toolsOptions";
+import tools from "../../__mocks__/responses/tools";
 
 describe("Test tools and technologies options util function", () => {
   it("Can create a valid json for chart", () => {
@@ -56,6 +56,6 @@ describe("Test tools and technologies options util function", () => {
       }
     };
 
-    expect(toolsOptions(items)).toStrictEqual(expectedResult);
+    expect(toolsOptions(tools)).toStrictEqual(expectedResult);
   });
 });

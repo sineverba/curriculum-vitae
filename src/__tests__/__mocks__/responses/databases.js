@@ -1,7 +1,4 @@
-/**
- * The answer to /databases call
- */
-export const items = [
+module.exports = [
   {
     id: 1,
     database_name: "Mongo DB",

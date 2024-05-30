@@ -1,5 +1,5 @@
-import databasesOptions from "../../../utils/methods/databasesOptions";
-import { items } from "../../__mocks__/responses/databases";
+import databasesOptions from "@/app/utils/methods/databasesOptions";
+import databases from "../../__mocks__/responses/databases";
 
 describe("Test database options util function", () => {
   it("Can create a valid json for chart", () => {
@@ -53,6 +53,6 @@ describe("Test database options util function", () => {
       }]
     };
 
-    expect(databasesOptions(items)).toStrictEqual(expectedResult);
+    expect(databasesOptions(databases)).toStrictEqual(expectedResult);
   });
 });

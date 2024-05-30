@@ -1,11 +1,57 @@
-FROM nginx:1.25.3-alpine3.18-slim
+######################################
+#
+#       TESTER
+#
+######################################
+ARG NODE_VERSION
+ARG NGINX_VERSION
+FROM node:${NODE_VERSION}-alpine3.19 AS tester
+ENV CI=true
+ARG NPM_VERSION
+# Add a workdir directory
+WORKDIR /app
+# Copy all files into the directory.
+COPY ./ .
+# Update node
+RUN npm install -g npm@$NPM_VERSION && npm -v | grep $NPM_VERSION && npm install
+RUN npm run lint
+RUN npm pkg set scripts.test="CI=true jest --silent"
+RUN npm run test
+######################################
+#
+#       BUILDER
+#
+######################################
+FROM node:${NODE_VERSION}-alpine3.19 AS builder
+# Add a workdir directory
+WORKDIR /app
+# Copy all files
+COPY ./ .
+# Set env
+COPY .env.bak .env
+# Remove tests
+RUN rm -rf /app/src/__tests__/
+# Skip prepare
+RUN npm pkg set scripts.prepare="echo no-prepare"
+# Update node, npm install dependencies with ignore-scripts to skip prepare
+RUN npm install -g npm@$NPM_VERSION && npm install --omit=dev
+RUN npm run build
+######################################
+#
+#       PRODUCTION
+#
+######################################
+# Use NGINX
+FROM nginx:${NGINX_VERSION}-alpine3.19-slim AS production
 # Update and upgrade
 RUN apk update && \
-    apk add --upgrade apk-tools && \
-    apk upgrade --available && \
+    apk upgrade --available --no-cache && \
     rm -rf /var/cache/apk/*
 # Copy from builder
-COPY build /usr/share/nginx/html
+COPY --from=builder /app/out /usr/share/nginx/html
+# Set permissions to 644 for all files and directories recursively
+RUN find /usr/share/nginx/html -type f -exec chmod 644 {} + && \
+    find /usr/share/nginx/html -type d -exec chmod 755 {} +
 # Copy nginx configuration
 COPY dockerfiles/production/build/nginx/app.conf /etc/nginx/conf.d/default.conf
 # Expose port

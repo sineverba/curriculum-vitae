@@ -1,5 +1,5 @@
-import workingModeOptions from "../../../utils/methods/workingModeOptions";
-import { items } from "../../__mocks__/responses/workingMode";
+import workingModeOptions from "@/app/utils/methods/workingModeOptions";
+import workingModes from "../../__mocks__/responses/workingModes";
 
 describe("Test working mode options util function", () => {
   it("Can create a valid json for chart", () => {
@@ -48,6 +48,6 @@ describe("Test working mode options util function", () => {
       }
     };
 
-    expect(workingModeOptions(items)).toStrictEqual(expectedResult);
+    expect(workingModeOptions(workingModes)).toStrictEqual(expectedResult);
   });
 });
