@@ -1,25 +1,25 @@
-import frameworksOptions from "../../../utils/methods/frameworksOptions";
-import { items } from "../../__mocks__/responses/frameworks";
+import frameworksOptions from "@/app/utils/methods/frameworksOptions";
+import frameworks from "../../__mocks__/responses/frameworks";
 
 describe("Test frameworks options util function", () => {
   it("Can create a valid json for chart", () => {
     const expectedResult = {
       chart: {
-        type: 'column'
+        type: "column"
       },
       title: {
-        text: 'Framework and libraries'
+        text: "Framework and libraries"
       },
       xAxis: {
         categories: [
-          'Laravel',
-          'CodeIgniter',
-          'F3',
-          'Spring',
-          'Serverless',
-          'React + Redux + Enzyme/Jest/Nock',
-          'Nuxt + Vuex + Cypress',
-          'Bootstrap CSS',
+          "Laravel",
+          "CodeIgniter",
+          "F3",
+          "Spring",
+          "Serverless",
+          "React + Redux + Enzyme/Jest/Nock",
+          "Nuxt + Vuex + Cypress",
+          "Bootstrap CSS"
         ],
         crosshair: true
       },
@@ -27,7 +27,7 @@ describe("Test frameworks options util function", () => {
         max: 100,
         min: 0,
         title: {
-          text: '% knowledge'
+          text: "% knowledge"
         }
       },
       tooltip: {
@@ -40,16 +40,27 @@ describe("Test frameworks options util function", () => {
           borderWidth: 0
         }
       },
-      series: [{
-        name: '% knowledge',
-        data: [80, 20, 75, 80, 70, 95, 80, 95]
-      }],
-      colors: ['#FF9655', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#FFF263', '#6AF9C4'],
+      series: [
+        {
+          name: "% knowledge",
+          data: [80, 20, 75, 80, 70, 95, 80, 95]
+        }
+      ],
+      colors: [
+        "#FF9655",
+        "#058DC7",
+        "#50B432",
+        "#ED561B",
+        "#DDDF00",
+        "#24CBE5",
+        "#FFF263",
+        "#6AF9C4"
+      ],
       accessibility: {
         enabled: false
       }
     };
 
-    expect(frameworksOptions(items)).toStrictEqual(expectedResult);
+    expect(frameworksOptions(frameworks)).toStrictEqual(expectedResult);
   });
 });

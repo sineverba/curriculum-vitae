@@ -1,5 +1,5 @@
-import databasesValuesConverter from "../../../utils/methods/databasesValuesConverter";
-import { items } from "../../__mocks__/responses/databases";
+import databasesValuesConverter from "@/app/utils/methods/databasesValuesConverter";
+import databases from "../../__mocks__/responses/databases";
 
 describe("Test databasesValuesConverter util function", () => {
   it("Can convert values", () => {
@@ -11,6 +11,6 @@ describe("Test databasesValuesConverter util function", () => {
       { name: "Oracle", y: 20 }
     ];
 
-    expect(databasesValuesConverter(items)).toStrictEqual(expectedResult);
+    expect(databasesValuesConverter(databases)).toStrictEqual(expectedResult);
   });
 });

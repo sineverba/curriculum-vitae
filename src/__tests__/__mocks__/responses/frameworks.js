@@ -1,7 +1,4 @@
-/**
- * The answer to /frameworks call
- */
-export const items = [
+module.exports = [
   {
     id: 1,
     name: "Laravel",
