@@ -12,7 +12,7 @@ export default function FooterPage() {
       <p>
         Frontend v. {process.env.NEXT_PUBLIC_APP_VERSION} - &copy;{" "}
         {GetYearInterval("2022")} -{" "}
-        {data && data.version && `- Backend v. ${data.version}`} -{" "}
+        {data?.version && `- Backend v. ${data.version}`} -{" "}
         <a href="https://github.com/sineverba/curriculum-vitae">
           View source on Github
         </a>

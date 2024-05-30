@@ -8,7 +8,7 @@ extraValues.set("URL_PROGRAMMING_LANGUAGES", "programming-languages");
 extraValues.set("URL_FRAMEWORKS", "frameworks");
 extraValues.set("URL_TOOLS", "tools");
 extraValues.set("URL_DATABASES", "databases");
-extraValues.set("URL_WORKING_MODE", "working-mode");
+extraValues.set("URL_WORKING_MODES", "working-mode");
 extraValues.set("REDUX_REDUCER_PATH", "apiSlice");
 extraValues.set("REDUX_TAG_VERSIONS", "versions");
 extraValues.set("REDUX_TAG_PROGRAMMING_LANGUAGES", "programmingLanguages");
