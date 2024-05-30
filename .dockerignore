@@ -1,5 +1,6 @@
 .next/
 .swc/
+.scannerwork/
 .test_report/
 coverage/
 node_modules/
