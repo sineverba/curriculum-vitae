@@ -1,4 +1,4 @@
-# Next version
+# 1.12.0
 + Refactor with NextJS
 + Upgrade dependencies
 
