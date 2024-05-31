@@ -1,6 +1,6 @@
 IMAGE_NAME=registry.gitlab.com/cicdprojects/online-banking-frontend
 CONTAINER_NAME=online-banking-frontend
-VERSION=1.11.0-dev
+VERSION=1.12.0-dev
 NODE_VERSION=20.14.0
 NPM_VERSION=10.8.1
 NGINX_VERSION=1.27.0

@@ -1,6 +1,6 @@
 services:
   curriculum-vitae:
-    image: registry.gitlab.com/cicdprojects/curriculum-vitae:1.11.0
+    image: registry.gitlab.com/cicdprojects/curriculum-vitae:1.12.0
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     env_file:
