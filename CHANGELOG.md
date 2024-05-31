@@ -1,5 +1,6 @@
 # Next version
 + Refactor with NextJS
++ Upgrade dependencies
 
 ## 1.11.0
 + Refactor Semaphore

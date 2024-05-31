@@ -2,10 +2,10 @@ version: 2.1
 executors:
   docker_executor:
     docker:
-      - image: cimg/node:20.12.2
+      - image: cimg/node:20.14.0
     resource_class: medium
     environment:
-      NPM_VERSION: 10.2.5
+      NPM_VERSION: 10.8.1
   amd64_executor:
     machine:
       image: ubuntu-2204:current
@@ -14,10 +14,10 @@ executors:
       FOLDER_APP: curriculum-vitae
       DOCKER_REGISTRY: registry.gitlab.com
       DOCKER_IMAGE: registry.gitlab.com/cicdprojects/curriculum-vitae
-      NODE_VERSION: 20.12.2
-      NPM_VERSION: 10.2.5
-      NGINX_VERSION: 1.25.5
-      BINFMT_VERSION: qemu-v7.0.0-28
+      NODE_VERSION: 20.14.0
+      NPM_VERSION: 10.8.1
+      NGINX_VERSION: 1.27.0
+      BINFMT_VERSION: qemu-v8.1.5-43
 jobs:
   test:
     executor: docker_executor
