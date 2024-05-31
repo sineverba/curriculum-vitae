@@ -1,5 +1,5 @@
-import programmingLanguagesOptions from "../../../utils/methods/programmingLanguagesOptions";
-import { items } from "../../__mocks__/responses/programmingLanguages";
+import programmingLanguagesOptions from "@/app/utils/methods/programmingLanguagesOptions";
+import programmingLanguages from "../../__mocks__/responses/programmingLanguages";
 
 describe("Test programming languages options util function", () => {
   it("Can create a valid json for chart", () => {
@@ -34,6 +34,6 @@ describe("Test programming languages options util function", () => {
       }
     };
 
-    expect(programmingLanguagesOptions(items)).toStrictEqual(expectedResult);
+    expect(programmingLanguagesOptions(programmingLanguages)).toStrictEqual(expectedResult);
   });
 });

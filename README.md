@@ -27,5 +27,5 @@ __This project uses:__
 ## Setup
 + Copy .env.bak into .env
 + Fill with Sonar data
-+ Run `npm run prepare`
-+ Run `make initmsw`
++ Run `$ nvm use`
++ Run `$ npm install`

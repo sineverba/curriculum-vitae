@@ -1,7 +1,4 @@
-/**
- * The answer to /tools call
- */
-export const items = [
+module.exports = [
   {
     id: 1,
     name: "Docker",
